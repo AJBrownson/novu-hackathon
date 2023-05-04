@@ -1,0 +1,24 @@
+{
+  "name": "novu-hackathon",
+  "version": "1.0.0",
+  "description": "A Weather App for sending timely alerts on weather conditions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AJBrownson/novu-hackathon.git"
+  },
+  "keywords": [
+    "novu",
+    "hackathon",
+    "weather app"
+  ],
+  "author": "Brownson Anietie Jonah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AJBrownson/novu-hackathon/issues"
+  },
+  "homepage": "https://github.com/AJBrownson/novu-hackathon#readme"
+}
