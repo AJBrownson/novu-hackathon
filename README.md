@@ -12,7 +12,7 @@ The ultimate service for managing multi-channel notifications with a single API.
 <p>Description</p>
 
 <h3>Technologies being used</h3>
-<p>NextJS / Python / Laravel / NestJS, anything you can to help us bring the right people to test the project</p>
+<p>ReactJS, NodeJS, ExpressJS, NextJS</p>
 
 <h3>App Link</h3>
 <p>If there is</p>
