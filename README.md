@@ -8,7 +8,7 @@
 The ultimate service for managing multi-channel notifications with a single API.
 </div>
 
-<h3>Your Topic</h3>
+<h3>A notification system that integrates with weather APIs and sends alerts for severe weather conditions or natural disasters.</h3>
 <p>Description</p>
 
 <h3>Technologies being used</h3>
