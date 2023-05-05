@@ -15,7 +15,7 @@ const Greeting = () => {
 
   return (
     <>
-      <h1>Good {greetings}!</h1>
+      <h3>Good {greetings}!</h3>
     </>
   );
 };
