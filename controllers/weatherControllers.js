@@ -10,7 +10,7 @@ const dotenv = require("dotenv").config;
 const getCurrentWeather = async (req, res) => {
   const { latitude, longitude } = req.query;
 //   const API_KEY = process.env.TEMPI_API_KEY;
-const API_KEY = "d26037d7bf49c6a31cfcf546d9f05704";
+  const API_KEY = "d26037d7bf49c6a31cfcf546d9f05704";
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`;
 
   axios.get(url)
