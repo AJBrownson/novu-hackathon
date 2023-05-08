@@ -3,6 +3,6 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: 'Kumbh Sans', sans-serif;
-  /* background: #f47f37;
-  color: rgb(255, 255, 255); */
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }

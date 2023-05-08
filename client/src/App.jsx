@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Form from "./components/Form/Form";
+// import Form from "./components/Form/Form";
 import HomePage from "./pages/Home";
 
 const App = () => {

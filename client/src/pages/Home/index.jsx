@@ -1,70 +1,63 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Greeting from "../../components/Greeting";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import Greeting from '../../components/Greeting';
 import "./styles.css";
 
 
 const HomePage = () => {
-  const [weatherData, setWeatherData] = useState(null);
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
+  const [weatherData, setWeatherData] = useState(null);
+  const getIcons = (iconCode) => {
+    return `http://openweathermap.org/img/w/${iconCode}.png`;
+  }
 
   useEffect(() => {
-    const getLocation = () => {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          (position) => {
-            setLatitude(position.coords.latitude);
-            setLongitude(position.coords.longitude);
-          },
-          (error) => {
-            console.error(error);
-          }
-        );
-      } else {
-        console.error("Geolocation is not supported by this browser.");
-      }
-    };
-
-    getLocation();
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        setLatitude(position.coords.latitude);
+        setLongitude(position.coords.longitude);
+      }, (error) => {
+        console.log(error);
+      });
+    } else {
+      console.log('Geolocation is not enabled in this browser.');
+    }
   }, []);
 
   useEffect(() => {
-    const getWeatherData = async () => {
-      if (latitude && longitude) {
-        try {
-          const response = await axios.get(
-            `http://localhost:5000/api/weather?lat=${latitude}&lon=${longitude}`
-          );
+    if (latitude && longitude) {
+      axios.get(`http://localhost:5000/api/weather?latitude=${latitude}&longitude=${longitude}`)
+        .then((response) => {
           setWeatherData(response.data);
-        } catch (error) {
-          console.error(error);
-        }
-      }
-    };
-
-    getWeatherData();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   }, [latitude, longitude]);
 
   return (
     <div className="page">
-      {weatherData ? (
-        <>
-          <Greeting />
-          <div className="main-body">
-            <h2>
-              {weatherData.name}, {weatherData.sys.country}
-            </h2>
-            <h1>{weatherData.main.temp}°C</h1>
-            <h5>Weather: {weatherData.weather[0].description}</h5>
-            <h5>Humidity: {weatherData.main.humidity}%</h5>
-          </div>
-        </>
-      ) : (
-        <p className="loader">Loading weather data...</p>
-      )}
-    </div>
+    {weatherData ? (
+      <>
+        <Greeting />
+        <div>
+          <h2>
+            {weatherData.name}, {weatherData.sys.country}
+          </h2>
+          <h1>{weatherData.main.temp}°C</h1>
+          <img src={getIcons(weatherData.weather[0].icon)} alt="weather icon" />
+          <h5>Weather: {weatherData.weather[0].description}</h5>
+          <h5>Humidity: {weatherData.main.humidity}%</h5>
+          <h5>Wind Speed: {weatherData.wind.speed}</h5>
+        </div>
+      </>
+    ) : (
+      <div className="lds-hourglass"></div>
+    )}
+  </div>
   );
-};
+}
 
 export default HomePage;
