@@ -8,8 +8,8 @@ const HomePage = () => {
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
   const [weatherData, setWeatherData] = useState(null);
-  const getIcons = (iconCode) => {
-    return `http://openweathermap.org/img/w/${iconCode}.png`;
+  const getIcons = (icons) => {
+    return `http://openweathermap.org/img/w/${icons}.png`;
   }
 
   useEffect(() => {
