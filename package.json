@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "client": "cd client && npm run dev",
+    "dev": "concurrently -n 'server,client' -c 'blue,red' \"nodemon index.js\" \"npm run client\""
   },
   "repository": {
     "type": "git",
