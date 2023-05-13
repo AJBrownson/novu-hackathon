@@ -1,14 +1,13 @@
 import React from "react";
 import "./App.css";
-// import Form from "./components/Form/Form";
-import HomePage from "./pages/Home";
+import AllRoutes from './Routes'
 
 const App = () => {
   return (
     <>
-    <HomePage />
+    <AllRoutes />
     </>
   );
 };
 
-export default App;
+export default App
