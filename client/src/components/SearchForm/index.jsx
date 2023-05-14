@@ -5,17 +5,22 @@ const SearchForm = () => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log(data)
+
+        setData("")
     }
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form style={{display: "flex", padding: '.5rem'}} onSubmit={handleSubmit}>
         <input
             type="text"
             placeholder="Enter name of city"
             value={data}
             onChange={(e) => setData(e.target.value)}
             />
-            <input type="submit" />
+            <button style={{marginLeft: '5px', padding: '.5rem'}}>
+              Search
+            </button>
       </form>
     </>
   );

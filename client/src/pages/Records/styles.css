@@ -1,0 +1,23 @@
+.wrapper {
+    display: flex;
+}
+
+.cardi {
+    width: 100%; /* can be changed later to 50% or 20% */
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: transparent;
+}
+
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.body h1 {
+    font-size: 5rem;
+    font-weight: lighter;
+}
